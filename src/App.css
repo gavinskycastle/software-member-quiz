@@ -1,0 +1,27 @@
+body {
+    font-family: sans-serif;
+    background-image: url('/public/cone.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    color: fuchsia;
+}
+
+input {
+    color: blue;
+}
+
+.bad {
+    color: red;
+}
+
+.good {
+    color: green;
+}
+
+iframe {
+    display: block;
+    margin: auto;
+}
