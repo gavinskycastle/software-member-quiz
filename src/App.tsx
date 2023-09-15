@@ -12,6 +12,8 @@ function App() {
     }
 
     const [isCorrectAnswers, setIsCorrectAnswers] = useState(Array(6).fill(false));
+    
+    const [totalScore, setTotalScore] = useState(0.0);
 
     let [checkForAnswers, setCheckForAnswers] = useState(false);
 
@@ -20,6 +22,8 @@ function App() {
         setIsCorrectAnswers(
             correctAnswers.map((item, index) => item === answers[index])
         );
+        // Generates a total score based on the state of each answer's correctness, for example, [true, true, false, false, false, false] returns 33.33%
+        setTotalScore(+((isCorrectAnswers.map((item) => + item).reduce((a, b) => a + b, 0) / isCorrectAnswers.length) * 100).toFixed(2));
     }
 
     const [colorChanged, setColorChanged] = useState(false);
@@ -28,7 +32,7 @@ function App() {
         <>
             <h1 className={colorChanged ? "changed" : ""}>Software member quiz</h1>
 
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.emojipng.com%2F630%2F12926630-small.png"></img>
+            <img src="/src/assets/cone.png"></img>
 
             <Question title="Q1: What name did Ronan suggest for the 2023 robot?"
                 onChange={value => setAnswer(0, value)}
@@ -72,13 +76,19 @@ function App() {
             <div>
                 <button onClick={checkAnswers}>Check Answers</button>
             </div>
-
+            
             <div>
                 <button onClick={() => setColorChanged(!colorChanged)}>Change Color</button>
             </div>
 
             <br />
+            
+            <div>
+                <h4>Total score: {totalScore}%</h4>
+            </div>
 
+            <br />
+            
             <h2>Answers that you typed</h2>
 
             <h4>Q1: {answers[0]}</h4>
