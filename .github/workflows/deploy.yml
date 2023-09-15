@@ -1,4 +1,4 @@
-name: Deploy Preact to gh-pages
+name: Deploy React to gh-pages
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
       - name: Build app
         env:
           GITHUB_PAGES: software-member-quiz
-        run: npm run build-gh
+        run: npm run build
         
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v1.0.4
