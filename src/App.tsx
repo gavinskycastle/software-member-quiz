@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import coneUrl from "./assets/cone.png";
 import Question from './Question';
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
         <>
             <h1 className={colorChanged ? "changed" : ""}>Software member quiz</h1>
 
-            <img src="/src/public/cone.png"></img>
+            <img src={coneUrl}></img>
 
             <Question title="Q1: What name did Ronan suggest for the 2023 robot?"
                 onChange={value => setAnswer(0, value)}
