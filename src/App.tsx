@@ -32,7 +32,7 @@ function App() {
         <>
             <h1 className={colorChanged ? "changed" : ""}>Software member quiz</h1>
 
-            <img src="/src/assets/cone.png"></img>
+            <img src="/src/public/cone.png"></img>
 
             <Question title="Q1: What name did Ronan suggest for the 2023 robot?"
                 onChange={value => setAnswer(0, value)}
